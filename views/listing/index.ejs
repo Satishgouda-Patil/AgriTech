@@ -1,0 +1,63 @@
+<% layout('/layout/boilerplate') -%>
+<style>
+   .row {
+    margin: 20px; /* Margin around the row */
+}
+
+.card {
+    border: 1px solid #dee2e6; /* Light border for the card */
+    border-radius: 8px; /* Rounded corners */
+    overflow: hidden; /* Prevent content overflow */
+    transition: transform 0.2s, box-shadow 0.2s; /* Animation effects */
+    background-color: white; /* White background for cards */
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Shadow effect on hover */
+}
+
+.card-img-top {
+    object-fit: cover; /* Maintain aspect ratio while filling space */
+}
+
+.card-body {
+    padding: 15px; /* Padding inside the card body */
+}
+
+.card-text {
+    color: #343a40; /* Darker text color */
+    font-size: 16px; /* Font size */
+    margin: 0; /* Remove default margin */
+}
+
+.card-text b {
+    font-size: 18px; /* Slightly larger bold text */
+}
+
+a {
+    text-decoration: none; /* Remove underline from links */
+    color: inherit; /* Inherit color from parent */
+}
+
+a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+</style>
+<body>
+   <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1">
+      <% for (let dt of data) { %>
+         <a href="/listing/<%= dt._id %>" style="text-decoration: none;">
+            <div class="card col">
+               <img class="card-img-top" style="height: 20rem;" src="<%= dt.Image %>" alt="Card image cap">
+               <div class="card-body">
+                  <p class="card-text">
+                     <b><%= dt.title %></b> <br>
+                     &#x20b9; &nbsp;<%= dt.price %>
+                  </p>
+               </div>
+            </div>
+         </a>
+      <% } %>
+   </div>
+</body>
