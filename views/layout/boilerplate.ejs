@@ -15,7 +15,19 @@
 <body>
 
     <%- include("../includes/navbar.ejs") %>
+    <%  if(sucMsg && sucMsg.length>0){ %>
+        <div class="alert alert-success col-6 offset-3">
+          <%= sucMsg %>
+          <button type="button" style="margin-left: 60%;" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+      <% } %>
 
+      <%  if(errMsg && errMsg.length>0){ %>
+        <div class="alert alert-danger alert-dismissible fade show col-6 offset-3">
+          <%= errMsg %>
+          <button type="button" style="margin-left:  60%;" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+      <% } %>
     <div class="container"><%- body %></div>
 
     <%- include("../includes/footer.ejs") %>

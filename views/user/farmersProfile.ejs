@@ -1,0 +1,151 @@
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.profile-container {
+    max-width: 600px;
+    margin: 50px auto;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.profile-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.profile-pic {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+}
+
+.username {
+    font-size: 24px;
+    margin: 10px 0;
+}
+
+.role {
+    font-size: 18px;
+    font-style: italic;
+    color: #555;
+}
+
+.email {
+    font-size: 16px;
+    color: #666;
+}
+
+.profile-info {
+    margin-bottom: 20px;
+}
+
+.profile-info h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.profile-info p {
+    line-height: 1.6;
+    color: #333;
+}
+
+.crops-section, .buyers-section {
+    margin-bottom: 20px;
+}
+
+.crops-list, .buyers-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.crops-list li, .buyers-list li {
+    background: #e9ecef;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 4px;
+}
+
+.profile-actions {
+    text-align: center;
+}
+
+.btn {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+.edit {
+    background-color: #28a745;
+}
+
+.edit:hover {
+    background-color: #218838;
+}
+
+.logout {
+    background-color: #dc3545;
+}
+
+.logout:hover {
+    background-color: #c82333;
+}
+
+</style>
+
+<body>
+    <div class="profile-container">
+        <div class="profile-header">
+            <img src="https://via.placeholder.com/150" alt="Profile Picture" class="profile-pic">
+            <h1 class="username">John Doe</h1>
+            <p class="role">Farmer</p>
+            <p class="email">john.doe@example.com</p>
+        </div>
+        
+        <div class="profile-info">
+            <h2>About Me</h2>
+            <p>Hello! I’m John, a farmer dedicated to sustainable agriculture. I grow organic vegetables and love sharing my harvest with the community.</p>
+        </div>
+
+        <div class="crops-section">
+            <h2>My Crops</h2>
+            <ul class="crops-list">
+                <li>Tomatoes</li>
+                <li>Cucumbers</li>
+                <li>Bell Peppers</li>
+                <li>Carrots</li>
+            </ul>
+        </div>
+
+        <div class="buyers-section">
+            <h2>My Buyers</h2>
+            <ul class="buyers-list">
+                <li>Jane Smith - 10 kg Tomatoes</li>
+                <li>Mark Johnson - 5 kg Cucumbers</li>
+                <li>Lisa Brown - 15 kg Bell Peppers</li>
+            </ul>
+        </div>
+
+        <div class="profile-actions">
+            <button class="btn edit">Edit Profile</button>
+            <button class="btn logout">Logout</button>
+        </div>
+    </div>
+</body>

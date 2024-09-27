@@ -30,6 +30,7 @@
 }
 
 .card-text {
+    border-top: 2pz solid black;
     color: #555;
     margin: 10px 0;
 }
@@ -74,17 +75,19 @@
             <div class="card  ">
                 <img class="card showImage editImg" src="<%= result.Image %>" alt="listing">
                 <div class="card-body">
-                    <p class="card-text owner-text">Owned by: <i>'<%= result.owner %>'</i></p>
-                    <p class="card-text"><b><%= result.title %></b></p>
-                    <p class="card-text description-text"><%= result.description %></p>
-                    <p class="card-text"><strong>Location:</strong> <%= result.location %></p>
-                    <p class="card-text price-text">&#x20b9; <strong><%= result.price %></strong></p>
-                    <p class="card-text"><strong>Country:</strong> <%= result.country %></p>
+                    <p class="card-text owner-text"><b>Owner by:</b> <i>'<%= result.owner %>'</i></p>
+                    <p class="card-text"><b>Title:</b><%= result.title %></p>
+                    <p class="card-text description-text"><b>Description:</b><%= result.description %></p>
+                    <p class="card-text"><b>Location:</b> <%= result.location %></p>
+                    <p class="card-text price-text"><b>Price:</b>&#x20b9;<strong><%= result.price %></strong></p>
+                    <p class="card-text"><b>Country:</b> <%= result.country %></p>
                 </div>
+               <% if(currentUser && currentUser._id.equals(result.ownerId)) { %>
                 <div class="btns">
-                    <a href="/listing/<%= result._id %>/edit"><button class="btn btn-dark ml-9" style="width: 5rem;">Edit</button></a>
+                   <a href="/listing/<%= result._id %>/edit"><button class="btn btn-dark ml-9" style="width: 5rem;">Edit</button></a>
                    <a href="/listing/<%= result._id %>/delete"> <button class="btn btn btn-danger ml-9" style="width: 5rem;">Delete</button></a>
                 </div>
+                <% } %>
             </div>
         </div>
     </div>

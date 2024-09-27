@@ -16,8 +16,11 @@
   </div>
   <ul style="justify-content: flex-end;">
     <li><a href="/listing">Home</a></li>
-    <li><a href="/buyer">Buyer</a></li>
+      <li><a href="/buyer">Buyer</a></li>
+   <% if(currentUser&&currentUser.isFarmer) { %>
     <li><a href="/farmers">Farmers</a></li>
     <li><a href="/listing/new">New List</a></li>
+   <% } %>
+    <li><a href="/auth/login">LogIn</a></li>
   </ul>
 </nav>

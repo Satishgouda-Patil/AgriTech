@@ -1,5 +1,6 @@
 const mongoose=require("mongoose")
 const Review=require("./review.js")
+const user=require("./user.js")
 const schema=mongoose.Schema;
 
 // Define schema
@@ -22,6 +23,10 @@ const listingSchema = new schema({
     ref:"Review"
   }],
   owner:String,
+  ownerId:{
+    type:schema.Types.ObjectId,
+    ref:"User",
+  }
 });
 
 // Create a model from the schema
