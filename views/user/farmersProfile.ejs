@@ -1,3 +1,4 @@
+<% layout('/layout/boilerplate') -%>
 <style>
 body {
     font-family: Arial, sans-serif;
@@ -114,8 +115,15 @@ body {
     <div class="profile-container">
         <div class="profile-header">
             <img src="https://via.placeholder.com/150" alt="Profile Picture" class="profile-pic">
-            <h1 class="username">John Doe</h1>
-            <p class="role">Farmer</p>
+            <h1 class="username"><%= user.username %></h1>
+            <p class="role">
+                <% if(user.isFarmer) { %>
+                    Farmer
+                    <% } %>
+                    <% if(!user.isFarmer) { %>
+                        Buyer
+                    <% } %>
+            </p>
             <p class="email">john.doe@example.com</p>
         </div>
         
@@ -144,8 +152,8 @@ body {
         </div>
 
         <div class="profile-actions">
-            <button class="btn edit">Edit Profile</button>
-            <button class="btn logout">Logout</button>
+            <a href="/edit/<%= user._id %>"><button class="btn edit">Edit Profile</button></a>
+            <a href="/auth/logout"><button class="btn logout">Logout</button></a>
         </div>
     </div>
 </body>

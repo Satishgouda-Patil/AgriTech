@@ -1,0 +1,112 @@
+<% layout('/layout/boilerplate') -%>
+<style>
+.post{
+    margin-left: 80rem;
+}
+
+/* Container for cards */
+.card-container, .container{
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* Main card styles */
+.card {
+    background-color: white;
+    width: 100%;
+    max-width: 350px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: box-shadow 0.3s ease;
+    margin: 20px;
+}
+
+/* Card hover effect */
+.card:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Image styling */
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+/* Body section styling */
+.card-body {
+    padding: 20px;
+}
+
+/* Title inside the body */
+.card-body h3 {
+    margin-top: 0;
+    font-size: 1.2em;
+    color: #333;
+}
+
+/* Text content */
+.card-body p {
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+/* Footer section styling */
+.card-footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #f9f9f9;
+}
+
+/* Button styling */
+button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 1em;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+</style>
+<body class="abc">
+    <div>
+       <a href="/post"> <button class="btn btn-success post ">Post</button>3</a>
+    </div>
+    <div class="container">
+        <!-- FarmVision Card -->
+        <div class="card">
+            <img class="card-img-top" src="https://imgs.search.brave.com/hLlp2jfEYS9H2l02B4qz6qN0tM9AfbskvCQeyG4BUfY/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly93d3cu/bXl0ZWNobWFnLmNv/bS93cC1jb250ZW50/L3VwbG9hZHMvMjAy/Mi8wMy9tb2Rlcm4t/YWdyaWN1bHR1cmFs/LXRlY2hub2xvZ3kt/YWRvcHRpb24tYW5k/LWl0cy1pbXBvcnRh/bmNlLTc1MHgzNzUu/anBn" alt="FarmVision">
+            <div class="card-body">
+                <h3>Feature: FarmVision</h3>
+                <p>FarmVision allows farmers to showcase their modern farming techniques through videos, enabling them to share agri-tech innovations, crop-growing ideas, and best practices with the community and buyers.</p>
+                <p><strong>Platform Benefits:</strong> Inspire fellow farmers, enhance transparency with buyers, and create a dynamic learning environment.</p>
+                <p><strong>Content:</strong> Farmers can upload videos of their innovative practices, helping others learn and improve.</p>
+                <a href="https://smarttek.solutions/blog/the-role-of-iot-technology-in-modern-farming/" target="_blank"><button class="btn btn-success">Learn More</button></a>
+                <a href="https://youtu.be/UkMZJrbCRdQ?si=ZkTDMrl2643DpVZY" target="_blank"><button class="btn btn-success">Watch Example</button></a>
+            </div>
+        </div>
+        <div class="card">
+            <img src="https://imgs.search.brave.com/_NtYAiC6bnyONVIMu89Wp9-SkrWeFoDRPEP4dQRr-ls/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly95b3Vy/ZHJvbmVyZXZpZXdz/LmNvbS93cC1jb250/ZW50L3VwbG9hZHMv/MjAyMS8wOC9kcm9u/ZXMtZm9yLWFncmlj/dWx0dXJlLmpwZw" alt="FarmVision">
+            <div class="card-body">
+                <h3>Feature: FarmVision</h3>
+                <p>FarmVision allows farmers to showcase their modern farming techniques through videos, enabling them to share agri-tech innovations, crop-growing ideas, and best practices with the community and buyers.</p>
+                <p><strong>Platform Benefits:</strong> Inspire fellow farmers, enhance transparency with buyers, and create a dynamic learning environment.</p>
+                <p><strong>Content:</strong> Farmers can upload videos of their innovative practices, helping others learn and improve.</p>
+                <a href="https://senzagro.com/blogs/why-modern-agriculture-is-right/" target="_blank"><button class="btn btn-success">Learn More</button></a>
+                <a href="https://youtu.be/UkMZJrbCRdQ?si=ZkTDMrl2643DpVZY" target="_blank"><button class="btn btn-success">Watch Example</button></a>
+            </div>
+        </div>
+    </div>
+</body>

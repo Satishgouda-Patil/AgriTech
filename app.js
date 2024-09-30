@@ -13,6 +13,8 @@ const flash=require("connect-flash");
 const passport = require("passport");
 const User = require("./models/user.js");
 const {isAuth}=require("./authMiddleware.js");
+const http = require('http');
+const { Server } = require('socket.io');
 // const route = express.Router();
 // const wrapasync = require("./util/wrapasync.js");
 
@@ -40,7 +42,8 @@ app.use(express.json())
 
 // using flash
 app.use(flash())
-
+const server = http.createServer(app);
+const io = new Server(server);
 app.use((req, res, next) => {
     res.locals.sucMsg=req.flash("suc")
     res.locals.errMsg=req.flash("err")
@@ -65,6 +68,7 @@ const listingRoute=require("./routes/listingRoute.js");
 const reviewRoute=require("./routes/reviewRoute.js");
 const userRoute=require("./routes/userRoute.js");
 const profileRoute=require("./routes/profileRoute.js");
+const AgriSupportRoute=require("./routes/AgriSupport.js");
 
 // app.get('/testing',async (req,res)=>{
 //     await listing.deleteMany({})
@@ -77,6 +81,26 @@ app.use("/listing",listingRoute)
 app.use("/listing",reviewRoute)
 app.use("/auth",userRoute)
 app.use("",profileRoute)
+app.use("",AgriSupportRoute)
+
+//socket conn.
+// Serve static files
+app.use(express.static(path.join(__dirname, 'public')));
+
+// Socket.io connection
+io.on('connection', (socket) => {
+  console.log('A user connected');
+
+  // Listen for chat messages
+  socket.on('chat message', (msg) => {
+    io.emit('chat message', msg); // Broadcast message to everyone
+  });
+
+  // Disconnect
+  socket.on('disconnect', () => {
+    console.log('User disconnected');
+  });
+});
 app.listen(3000,(req,res)=>{
-    console.log("listing..");
+    console.log("listening on port 3000..");
 })

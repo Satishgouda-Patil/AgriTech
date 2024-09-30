@@ -5,6 +5,10 @@ const reviewSchema=new schema({
     //     type:schema.Types.ObjectId,
     //     ref: "User",
     //   },
+    revStar:{
+        type: Number,
+        max:5,
+    },
     message:String,
     // revOwner:{
     //     type: schema.Types.ObjectId,

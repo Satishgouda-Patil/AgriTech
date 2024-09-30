@@ -30,6 +30,14 @@ route.post("/register", (async (req, res,) => {
 
 route.post("/login", passport.authenticate('local', {successRedirect: '/auth/suc',failureRedirect: '/auth/fail'}));
 
+route.get('/logout', function(req, res, next){
+    req.logout(function(err) {
+      if (err) { return next(err); }
+      req.flash("err", "Logged out successfully");
+      res.redirect('/listing');
+    });
+  });
+
 route.get("/suc", (req, res) => {
     req.flash("suc", "Logged in successfully");
     res.redirect("/listing");

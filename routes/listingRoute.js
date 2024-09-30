@@ -7,7 +7,6 @@ const { isAuth } = require("../authMiddleware");
 
 
 route.get("", async function(req, res,next){
-    console.log(req.user)
     let data=await listing.find({});
     res.render("listing/index.ejs",{data})
    }
@@ -27,7 +26,6 @@ route.post("",(
     let newData=new listing(list)
     newData.owner=req.user.username
     newData.ownerId=req.user._id
-    console.log(newData)
     await newData.save()
     res.redirect("/listing")
   })
@@ -37,7 +35,6 @@ route.post("",(
  route.get("/:id",isAuth,async (req,res)=>{
     let {id}=req.params;
     const result=await listing.findById(id).populate("reviews")
-    console.log(result);
     res.render("listing/show.ejs",{result})
     }
 
@@ -65,8 +62,5 @@ route.get("/:id/delete",async (req,res)=>{
     res.redirect("/listing")
     }
 )
-
-
-
 
  module.exports = route;

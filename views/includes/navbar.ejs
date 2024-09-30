@@ -16,11 +16,18 @@
   </div>
   <ul style="justify-content: flex-end;">
     <li><a href="/listing">Home</a></li>
-      <li><a href="/buyer">Buyer</a></li>
+    <% if(isLogin && (currentUser&&!currentUser.isFarmer)) { %>
+      <li><a href="/buyer">Profile</a></li>
+    <% } %>
    <% if(currentUser&&currentUser.isFarmer) { %>
-    <li><a href="/farmers">Farmers</a></li>
+    <li><a href="/AgriSupport">Agri Support</a></li>
+    <li><a href="/AgriVision">Agri Vision</a></li>
     <li><a href="/listing/new">New List</a></li>
+    <li><a href="/farmers">Profile</a></li>
    <% } %>
+   <% if(!isLogin) { %>
     <li><a href="/auth/login">LogIn</a></li>
+    <li><a href="/auth/register">Register</a></li>
+   <% } %>
   </ul>
 </nav>
